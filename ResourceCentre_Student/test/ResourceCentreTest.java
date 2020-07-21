@@ -135,6 +135,9 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		Boolean ans = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
+		Boolean ans1 = true;
+		assertEquals("returns true if chromebook is available for loan, returns false if chromebook is not available",ans,ans1);
 	}
 	
 	@Test
