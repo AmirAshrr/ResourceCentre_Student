@@ -125,6 +125,9 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		Boolean ans = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
+		Boolean ans1 = true;
+		assertEquals("returns true if camcorder is available for loan, returns false if camcorder is not available",ans1,ans1);
 		
 	}
 	
