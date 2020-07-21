@@ -126,12 +126,29 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		
+		//test if Camcorder is available for loan and it is a valid asset tag
+		Boolean ans = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
+		assertTrue("returns true if camcorder is available for loan and it is a valid asset tag",ans);
+		
+		//test if Camcorder is not available for loan or asset tag does not exist
+		Boolean ans1 = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
+		assertFalse("returns false if camcorder is not available for loan as it has been loaned out or asset tag does not exist",ans1);
+		
 	}
 	
 	@Test
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		//test if Chromebook is available for loan and it is a valid asset tag
+		Boolean ans = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
+		assertTrue("returns true if chromebook is available for loan and it is a valid asset tag",ans);
+		
+		//test if Chromebook is not available for loan or asset tag does not exist
+		Boolean ans1 = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
+		assertFalse("returns false if chromebook is not available for loan as it has been loaned out or asset tag does not exist",ans1);
+		
 	}
 	
 	@Test
@@ -139,11 +156,26 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		
+		//Test if Camcorder can be returned and it is a valid asset tag
+		Boolean ans = ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		assertTrue("returns true if Camcorder successfully returned and it is a valid asset tag",ans);
+		
+		//Test if Camcorder cannot be returned as it was not being loan out or asset tag does not exist
+		Boolean ans1 = ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		assertFalse("returns false if Camcorder is not not being loan or asset tag does not exist",ans1);
 	}
 	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		//Test if Chromebook can be returned and it is a valid asset tag
+		Boolean ans = ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		assertTrue("returns true if Chromebook successfully returned and it is a valid asset tag",ans);
+		
+		//Test if Chromebook cannot be returned as it was not being loan out or asset tag does not exist
+		Boolean ans1 = ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		assertFalse("returns false if Chromebook is not being loan or asset tag does not exist",ans1);
 	}
 	
 	@After
