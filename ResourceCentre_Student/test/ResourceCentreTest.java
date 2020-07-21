@@ -127,7 +127,8 @@ public class ResourceCentreTest {
 		// write your code here
 		Boolean ans = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
 		assertTrue("returns true if camcorder is available for loan",ans);
-		assertFalse("returns false if camcorder is not available for loan as it has been loaned out",ans);
+		Boolean ans1 = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
+		assertFalse("returns false if camcorder is not available for loan as it has been loaned out",ans1);
 		
 	}
 	
@@ -137,7 +138,8 @@ public class ResourceCentreTest {
 		// write your code here
 		Boolean ans = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
 		assertTrue("returns true if chromebook is available for loan",ans);
-		assertFalse("returns false if chromebook is not available for loan as it has been loaned out",ans);
+		Boolean ans1 = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
+		assertFalse("returns false if chromebook is not available for loan as it has been loaned out",ans1);
 		
 	}
 	
@@ -145,12 +147,19 @@ public class ResourceCentreTest {
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		
+		Boolean ans = ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		assertTrue("returns true if Camcorder successfully returned ",ans);
+		Boolean ans1 = ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		assertFalse("returns false if Camcorder is not not being loan or asset tag doees not exist",ans1);
 	}
 	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		Boolean ans = ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		assertTrue("returns true if Chromebook successfully returned ",ans);
+		Boolean ans1 = ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		assertFalse("returns false if Chromebook is not not being loan or asset tag doees not exist",ans1);
 	}
 	
 	@After
