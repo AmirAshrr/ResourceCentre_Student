@@ -126,8 +126,8 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		Boolean ans = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "29/10/2000");
-		Boolean ans1 = true;
-		assertEquals("returns true if camcorder is available for loan, returns false if camcorder is not available",ans,ans1);
+		assertTrue("returns true if camcorder is available for loan",ans);
+		assertFalse("returns false if camcorder is not available for loan as it has been loaned out",ans);
 		
 	}
 	
@@ -136,8 +136,9 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		Boolean ans = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "29/10/2000");
-		Boolean ans1 = true;
-		assertEquals("returns true if chromebook is available for loan, returns false if chromebook is not available",ans,ans1);
+		assertTrue("returns true if chromebook is available for loan",ans);
+		assertFalse("returns false if chromebook is not available for loan as it has been loaned out",ans);
+		
 	}
 	
 	@Test
